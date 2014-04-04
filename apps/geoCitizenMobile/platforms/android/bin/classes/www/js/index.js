@@ -13,6 +13,8 @@ function onDeviceReady(){
 	
 	document.addEventListener("backbutton", onBackKeyDown, false);
 	
+	fbplugin = new CC.CordovaFacebook();
+	
 	$.mobile.allowCrossDomainPages = true;
     $.mobile.zoom.enabled = false;
     $.mobile.buttonMarkup.hoverDelay = 0; 
@@ -20,6 +22,8 @@ function onDeviceReady(){
     $.mobile.defaultPageTransition = 'none';
     $.mobile.useFastClick = true;
     $.support.cors = true;
+    
+    
 }
 //Called only when the page is loaded
 $( document ).on("pageshow", '#homePage', function(event, ui){
