@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id = "com.geocitizen.report"
+        versionCode="3"
+        version = "1.0.0">
+    
+    <name>gC Denuncia</name>
+
+    <description>
+        Haz funcionar tu mundo!
+    </description>
+
+    <author href="http://www.geociudadano.org" email="geocitizenmail@gmail.com">
+        GeoCitizen 
+    </author>
+
+    <preference name="phonegap-version" value="3.1.0" />
+    <preference name="target-device" value="universal" />
+    <preference name="load-url-timeout" value="60000" />
+    
+	<access origin="*" subdomains="true" />
+	
+	<gap:platform name="ios" />
+	<gap:platform name="android" />
+    
+    <gap:plugin name="org.apache.cordova.camera" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    
+	<gap:plugin name="nl.x-services.plugins.socialsharing" />
+	
+	<icon src="res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:density="ldpi" />
+	<icon src="res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="res/icon/android/icon-72-hdpi.png" gap:platform="android" gap:density="hdpi" />
+	<icon src="res/icon/android/icon-96-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+	
+	<icon src="res/icon/ios/icon.png" width="57" height="57" />
+	<icon src="res/icon/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+	<icon src="res/icon/ios/icon_at_2x.png" width="114" height="114" />
+	
+</widget>

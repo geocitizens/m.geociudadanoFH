@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">	
+</head>
+<body>
+
+	<!-- poiInfoPage -->
+	<div data-role="page" id="poiInfoPage" class="content-header">
+		<div class="geo-header">
+	    	<div style="padding-top: 10px; font-size: 20px; text-shadow: none; font-weight: bold;">
+	    		<span class="text-blue">geo</span><span class="text-orange">Ciudadano</span>
+	    	</div>
+	    </div>
+				
+		<div data-role="content" class="contentfull" style="background: blue; padding: 10px; text-shadow: none; font-weight: bold;">
+						
+			<p style="color: white;">Observación seleccionada</p>
+			
+			<div id="poiInfoDiv" style="background: white; color: black; position: absolute; top: 50px; right: 10px; left: 10px; bottom: 70px;">
+			
+				<div style="padding: 10px 5px 5px 5px; overflow-y: auto; max-height: 80px;">
+					<span>Descripción: </span><span id="poiDesc"></span>
+				</div>
+				
+				<div id="poiImg" style="width: 100%; position: absolute; bottom: 80px; right: 0; left: 0;"></div>
+				
+				<div style="background: #FFBF00; color: blue; position: absolute; bottom: 40px; right: 0; left: 0; height: 30px; line-height: 30px; padding: 5px 10px; display:inline-block; vertical-align:middle;">
+				
+					<span>Tema: </span><span id="poiTheme">...</span>
+				</div>
+				
+				<div style="position: absolute; bottom: 0px; right: 0; left: 0; padding: 5px 10px; display:inline-block; vertical-align:middle;">	
+					<span>Fecha:</span><span id="poiDate">..</span>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div data-theme="a" data-role="footer" class="nav-bar" style="position : absolute; bottom: 0; right: 0; left: 0; width: 100%; height: 60px;">
+	        <div data-role="navbar" data-iconpos="top" class="nav-bar">
+	            <ul>
+	            	<li>
+	                    <a href="#" data-rel="back" class="backNav" data-icon="custom">Atrás</a>
+	                </li>
+	            </ul>
+	        </div>
+    	</div>				
+	</div><!-- /poiInfoPage -->
+
+</body>
+</html>

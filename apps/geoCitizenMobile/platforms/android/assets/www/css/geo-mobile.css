@@ -1,0 +1,109 @@
+.ui-btn.black-btn .ui-btn-inner {
+    color      : #FFFFFF !important;
+    background : #000000 !important;
+    text-shadow: none;    
+}
+.content-header .ui-content {
+    position : absolute;
+    top      : 40px;
+    right    : 0;
+    left     : 0;
+    bottom   : 0;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+label {
+	font-weight: bold !important;
+	text-decoration: none;
+}
+input {
+	font-weight: bold !important;
+}
+img.center
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.roundedCorners{
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border-radius: 5px;
+}
+.themeSelection{
+	padding: 5px;
+}
+/****************************************************** Buttons ****************************************/
+.ui-btn.blue-btn .ui-btn-inner {
+    color      : white !important;
+    background : #0404B4 !important;
+    text-shadow: none;
+}
+/*************************************************** Pages *******************************************/
+#map_canvas{
+    position : absolute;
+    top      : 0;
+    right    : 0;
+    bottom   : 60px;
+    left     : 0;
+}
+#disableMapLogo{
+	position : absolute;
+    left     : 0;
+    bottom   : 60px;
+    height   : 30px;
+    width    : 100%;
+    z-index: : 4000;
+    background: #FAFAFA;
+    opacity  : 0.1
+}
+#getLocation {
+	position : absolute;
+    right    : 10px;
+    bottom   : 70px;
+    height   : 40px;
+    width    : 40px;
+    z-index: : 5000;
+    background: #D8D8D8;
+    border   : 1px solid #000000;
+}
+.contentfull{
+    position : absolute;
+    top      : 0;
+    right    : 0;
+    bottom   : 60px;
+    left     : 0;
+}
+.geo-header{
+	min-height: 40px; 
+	text-align: center;
+	position: absolute; 
+	top:0; 
+	left: 0; 
+	right: 0; 
+	width: 100%; 
+	background-color: #000000;
+}
+/***************************************** Text ****************************************************/
+.text-blue{
+	color: blue;	
+}
+.text-orange{
+	color: orange;	
+}
+.text-red{
+	color: red;	
+}
+/**************************************** NavBar ****************************************************/
+.nav-bar .ui-btn .ui-btn-inner { padding-top: 40px !important; }
+.nav-bar .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
+.photoNav .ui-icon { background:  url(../img/navbar/photo_24.png) 50% 50% no-repeat; background-size: 24px 24px; }
+.reportNav .ui-icon { background:  url(../img/navbar/report_24.png) 50% 50% no-repeat; background-size: 24px 24px;  }
+.shareNav .ui-icon { background:  url(../img/navbar/share_24.png) 50% 50% no-repeat;  background-size: 24px 24px; }
+.backNav .ui-icon { background:  url(../img/navbar/arrow_left_24.png) 50% 50% no-repeat;  background-size: 24px 24px; }
+
+.ui-navbar .ui-btn-active {
+	background-image: none !important;
+	background: none !important;
+	border: none !important;
+}
