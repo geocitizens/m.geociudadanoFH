@@ -29,7 +29,7 @@
     <gap:plugin name="org.apache.cordova.file" />
     <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.dialogs" />
-    
+    <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
 	<gap:plugin name="nl.x-services.plugins.socialsharing" />
 	
 	<icon src="res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:density="ldpi" />
