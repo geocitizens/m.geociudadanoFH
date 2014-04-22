@@ -198,6 +198,13 @@ module.exports = [
         "clobbers": [
             "window.open"
         ]
+    },
+    {
+        "file": "plugins/com.phonegap.plugins.facebookconnect/www/phonegap/plugin/facebookConnectPlugin/facebookConnectPlugin.js",
+        "id": "com.phonegap.plugins.facebookconnect.FacebookConnectPlugin",
+        "clobbers": [
+            "window.facebookConnectPlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -206,9 +213,9 @@ module.exports.metadata =
     "org.apache.cordova.camera": "0.2.8",
     "org.apache.cordova.file": "1.0.1",
     "nl.x-services.plugins.socialsharing": "4.0.8",
-    "com.ccsoft.plugin.CordovaFacebook": "1.0.0",
     "org.apache.cordova.geolocation": "0.3.6",
-    "org.apache.cordova.inappbrowser": "0.3.3"
+    "org.apache.cordova.inappbrowser": "0.3.3",
+    "com.phonegap.plugins.facebookconnect": "0.5.0"
 }
 // BOTTOM OF METADATA
 });

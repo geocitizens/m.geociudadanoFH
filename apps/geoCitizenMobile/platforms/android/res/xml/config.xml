@@ -4,9 +4,6 @@
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
-    <feature name="CordovaFacebook">
-        <param name="android-package" value="com.ccsoft.plugin.CordovaFacebook" />
-    </feature>
     <name>geoCitizenMobile</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -21,5 +18,13 @@
     </feature>
     <feature name="InAppBrowser">
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <access origin="https://m.facebook.com" />
+    <access origin="https://graph.facebook.com" />
+    <access origin="https://api.facebook.com" />
+    <access origin="https://*.fbcdn.net" />
+    <access origin="https://*.akamaihd.net" />
+    <feature name="FacebookConnectPlugin">
+        <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
     </feature>
 </widget>
