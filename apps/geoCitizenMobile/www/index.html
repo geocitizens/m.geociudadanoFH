@@ -29,10 +29,18 @@
   <script src="js/Twitter.js"></script>
   <script src="js/codebird.js"></script>
   <script src="js.plugins/CordovaFacebook.js"></script>
+  <!-- cordova -->
+  <script src="phongap.js"></script>
+  <!-- cordova facebook plugin -->
+  <script src="cdv-plugin-fb-connect.js"></script>
+  <!-- facebook js sdk -->
+  <script src="facebook-js-sdk.js"></script>
 </head>
 
 
     <body>
+	
+	<div id="fb-root"></div>
 
 <!-- registerDriver -->
 <div data-role="page" id="homePage" data-theme="b" class="content-header">
@@ -56,6 +64,10 @@
  <br>
  <img style="border: 0px solid ; width: 158px; height: 28px;" alt="" src="img/sign-in-with-twitter-gray.png" href="#" onclick="OnClickLoginTwitter(); return false;"><br>
 
+ <button onclick="login()">Login</button>
+ <button onclick="getLoginStatus()">Get login</button>
+ <button onclick="logout()">Logout</button>
+ <div id="data">loading ...</div>
 </div>
 
 </div>

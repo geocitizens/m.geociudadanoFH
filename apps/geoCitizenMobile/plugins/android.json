@@ -10,17 +10,28 @@
                 "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>": 1,
                 "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>": 1,
                 "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.GeoBroker\" /></feature>": 1,
-                "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>": 1
+                "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>": 1,
+                "<feature name=\"Vibration\"><param name=\"android-package\" value=\"org.apache.cordova.vibration.Vibration\" /></feature>": 1,
+                "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>": 1,
+                "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>": 1,
+                "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>": 1,
+                "<feature name=\"Battery\"><param name=\"android-package\" value=\"org.apache.cordova.batterystatus.BatteryListener\" /></feature>": 1,
+                "<feature name=\"Accelerometer\"><param name=\"android-package\" value=\"org.apache.cordova.devicemotion.AccelListener\" /></feature>": 1,
+                "<feature name=\"Compass\"><param name=\"android-package\" value=\"org.apache.cordova.deviceorientation.CompassListener\" /></feature>": 1,
+                "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>": 1,
+                "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /></feature>": 1
             }
         },
         "AndroidManifest.xml": {
             "/*": {
-                "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />": 2,
-                "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />": 1,
-                "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />": 1
+                "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />": 3,
+                "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />": 2,
+                "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />": 2,
+                "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />": 1
             },
             "/manifest": {
-                "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />": 1
+                "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />": 1,
+                "<uses-permission android:name=\"android.permission.VIBRATE\" />": 1
             },
             "/*/application": {},
             "application": {
@@ -64,6 +75,33 @@
         "com.phonegap.plugins.facebookconnect": {
             "APP_ID": "540400396076898",
             "APP_NAME": "GeoCitizen",
+            "PACKAGE_NAME": "com.geocitizen.app"
+        },
+        "org.apache.cordova.vibration": {
+            "PACKAGE_NAME": "com.geocitizen.app"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.geocitizen.app"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.geocitizen.app"
+        },
+        "org.apache.cordova.network-information": {
+            "PACKAGE_NAME": "com.geocitizen.app"
+        },
+        "org.apache.cordova.battery-status": {
+            "PACKAGE_NAME": "com.geocitizen.app"
+        },
+        "org.apache.cordova.device-motion": {
+            "PACKAGE_NAME": "com.geocitizen.app"
+        },
+        "org.apache.cordova.device-orientation": {
+            "PACKAGE_NAME": "com.geocitizen.app"
+        },
+        "org.apache.cordova.file-transfer": {
+            "PACKAGE_NAME": "com.geocitizen.app"
+        },
+        "org.apache.cordova.splashscreen": {
             "PACKAGE_NAME": "com.geocitizen.app"
         }
     },

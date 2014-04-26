@@ -13,8 +13,6 @@ function onDeviceReady(){
 	
 	document.addEventListener("backbutton", onBackKeyDown, false);
 	
-	fbplugin = new CC.CordovaFacebook();
-	
 	$.mobile.allowCrossDomainPages = true;
     $.mobile.zoom.enabled = false;
     $.mobile.buttonMarkup.hoverDelay = 0; 
@@ -23,7 +21,24 @@ function onDeviceReady(){
     $.mobile.useFastClick = true;
     $.support.cors = true;
     
-    
+    try {
+		FB.init({ appId: "540400396076898", nativeInterface: CDV.FB, useCachedDialogs: false });
+		document.getElementById('data').innerHTML = "";
+	} catch (e) {
+		alert(e);
+	}
+}
+
+function login() {
+	FB.login(function(response) {
+		if (response.session) {
+			alert('you are logged in');
+		} else {
+			alert('you are not logged in');
+		}
+	},
+	{ scope: "email" }
+	);
 }
 //Called only when the page is loaded
 $( document ).on("pageshow", '#homePage', function(event, ui){

@@ -22,8 +22,28 @@ function onDeviceReady(){
     $.mobile.defaultPageTransition = 'none';
     $.mobile.useFastClick = true;
     $.support.cors = true;
+	
+	try {
+		alert('Device is ready! Write your app id below .For demo i put my app id there.');
+		FB.init({ appId: "540400396076898", nativeInterface: CDV.FB, useCachedDialogs: false });
+		document.getElementById('data').innerHTML = "";
+	} catch (e) {
+		alert(e);
+	}
     
     
+}
+
+function login() {
+	FB.login(function(response) {
+		if (response.session) {
+			alert('you are logged in');
+		} else {
+			alert('you are not logged in');
+		}
+	},
+	{ scope: "email" }
+	);
 }
 //Called only when the page is loaded
 $( document ).on("pageshow", '#homePage', function(event, ui){

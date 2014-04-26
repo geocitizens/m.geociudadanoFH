@@ -1,14 +1,18 @@
+var Codebird = require("codebird");
+//or with leading "./", if the codebird.js file is in your main folder:
+
+var cb = new Codebird;
+
+
 function OnClickLoginTwitter()
 {
-	var cb = new Codebird;
-	
-	cb.setConsumerKey("VVsYExbNHDhmg8f4Ra5aUMBKB"/*Key*/, "MKQIvnnKNKKJKf6gjpPOWPkhNKxzIAfNfOroFpWNHQqYMUVDjB"/*Secret*/);
+	cb.setConsumerKey("YOUR CONSUMER KEY", "YOUR CONSUMER SECRET");
 	
 // authorize the user and ask her to get the pin.
 	cb.__call
 	(
 		"oauth_requestToken",
-			{oauth_callback: " http://geociudadano.org/"},
+			{oauth_callback: "oob"},
 			function (reply)
 			{
 	   			cb.setToken(reply.oauth_token, reply.oauth_token_secret);
@@ -17,38 +21,15 @@ function OnClickLoginTwitter()
 	    			"oauth_authorize",	{},
 	    			function (auth_url)
 	    			{
-	    				/*
-	    				//var ref = window.open(auth_url, '_blank'); // call to InAppBrowser
-	    				
-	    				 var ref = window.open(auth_url, '_blank', 'location=no'); // redirection.
-	    				// check if the location the phonegap changes to matches our callback url or not
-	    				 ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
-	    				 
-	    				 //ref.addEventListener('loadstart', function(event)
-	    				 //{
-	    				     //if(event.url.match('geociudadano'))
-	    				     //{
-	    				    	 //ref.close();
-	    				    	 //authorize();
-	    				     //}
-	    				 //});    		
-	    				 */
-	    				var ref = window.open(auth_url, '_blank', 'location=no'); // redirection.
-        				// check if the location the phonegap changes to matches our callback url or not
-        				ref.addEventListener("loadstart", function(event) {				
-        					if(event.url.match('geociudadano')) {
-        						ref.close();
-        						authorize(event);
-        					}
-        				});        						    				
-	    				
+	    				var ref = window.open(auth_url, '_blank'); // call to InAppBrowser
+	    				ref.addEventListener('exit', authorize);
 	       			}
 	   			);
 			}
 	);
 	
 	//Aufruf der Servlet Methode mit ID und info das Aufruf über twitter	
-	/*$.post( url+'SocialMediaLogin', {ID : localStorage.ID, Type : "Twitter"})
+	$.post( url+'SocialMediaLogin', {ID = localStorage.ID, Type = "Twitter"})
 		.done( function(json) {
 		  								
 			if(json.constructor === String){
@@ -62,10 +43,19 @@ function OnClickLoginTwitter()
 			} else {
 
 			}
-	    });*/
+	    })
+	    .fail( function(xhr, textStatus, error) {
+	    	
+	    	console.log(xhr.statusText);
+	        console.log(textStatus);
+	        console.log(error);
+	    	//notification('Opps, hubo un problema en la conexiÃ³n. Intenta de nuevo.', 'Aviso', 'Aceptar');
+	    });
 }	
+	
+}
 
-/*function authorize()
+function authorize()
 {
    	var pin = prompt("Enter pin");
    	if(pin!=null && pin!="")
@@ -82,29 +72,4 @@ function OnClickLoginTwitter()
    			}
    		);
    	}
-}*/
-
-function authorize(o) {
-	var currentUrl = o.url;
-	var query = currentUrl.match(/oauth_verifier(.+)/);
-	
-   	for (var i = 0; i < query.length; i++) {
-    	parameter = query[i].split("=");
-    	if (parameter.length === 1) {
-        	parameter[1] = "";
-    	}
-	}
-   	
-	cb.__call(
-       	"oauth_accessToken", {oauth_verifier: parameter[1]},
-       	function (reply)
-       	{
-    	   	cb.setToken(reply.oauth_token, reply.oauth_token_secret);
-           	localStorage.accessToken = reply.oauth_token;
-           	localStorage.tokenSecret = reply.oauth_token_secret;
-           	localStorage.ID = reply.user_id;           	
-        }
-    );
-}
-
-
+}    

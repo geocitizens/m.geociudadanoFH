@@ -29,8 +29,8 @@
 	    <access origin="https://*.akamaihd.net" />
     </config-file>
     
-    <preference name="APP_ID" />
-	<preference name="APP_NAME" />
+    <preference name="APP_ID" value="540400396076898"/>
+	<preference name="APP_NAME" value="GeoCitizen"/>
     
     <engines>
     	<!-- Requires > 3.3.* because of the custom Framework tag for iOS [CB-5238] -->
