@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">	
+</head>
+<body>
+
+	<!-- reportPage -->
+	<div data-role="page" id="reportPage" class="content-header">
+		<div class="geo-header">
+	    	<div style="padding-top: 10px; font-size: 20px; text-shadow: none; font-weight: bold;">
+	    		<span class="text-blue">geo</span><span class="text-orange">Ciudadano</span>
+	    	</div>
+	    </div>
+				
+		<div data-role="content" class="contentfull" style="background: blue; padding: 10px; text-shadow: none; font-weight: bold; color: #FFBF00;">
+						
+			<p>Selecciona el tema</p>
+			
+			<div id="reportDiv" style="position: absolute; top: 50px; right: 10px; left: 10px; bottom: 70px; overflow-y: auto;">
+			
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<div id="theme101" class="roundedCorners themeSelection" onclick="themeSelection(101); return false;">
+							<p><img src="../img/markerSymbols/10101_1.png" alt="" width="32" height="37" style="float:right;"> Seguridad Ciudadana</p>
+						</div>
+					</div>
+					<div class="ui-block-b">
+						<div id="theme201" class="roundedCorners themeSelection" onclick="themeSelection(201); return false;">
+							<p><img src="../img/markerSymbols/20101_1.png" alt="" width="32" height="37" style="float:right;"> Movilidad</p>
+						</div>
+					</div>
+					<div class="ui-block-a">
+						<div id="theme301" class="roundedCorners themeSelection" onclick="themeSelection(301); return false;">
+							<p><img src="../img/markerSymbols/30101_1.png" alt="" width="32" height="37" style="float:right;"> Ordenamiento Territorial</p>
+						</div>
+					</div>
+					<div class="ui-block-b">
+						<div id="theme401" class="roundedCorners themeSelection" onclick="themeSelection(401); return false;">
+							<p><img src="../img/markerSymbols/40101_1.png" alt="" width="32" height="37" style="float:right;"> Servicios Públicos</p>
+						</div>
+					</div>
+					<div class="ui-block-a">
+						<div id="theme501" class="roundedCorners themeSelection" onclick="themeSelection(501); return false;">
+							<p><img src="../img/markerSymbols/50101_1.png" alt="" width="32" height="37" style="float:right;"> Medio Ambiente</p>
+						</div>
+					</div>
+					<div class="ui-block-b">
+						<div id="theme601" class="roundedCorners themeSelection" onclick="themeSelection(601); return false;">
+							<p><img src="../img/markerSymbols/60101_1.png" alt="" width="32" height="37" style="float:right;"> Salud Pública</p>
+						</div>
+					</div>
+					<div class="ui-block-a">
+						<div id="theme701" class="roundedCorners themeSelection" onclick="themeSelection(701); return false;">
+							<p><img src="../img/markerSymbols/70101_1.png" alt="" width="32" height="37" style="float:right;"> Sociedad y Cultura</p>
+						</div>
+					</div>
+					<div class="ui-block-b">
+						<div id="theme801" class="roundedCorners themeSelection" onclick="themeSelection(801); return false;">
+							<p><img src="../img/markerSymbols/80101_1.png" alt="" width="32" height="37" style="float:right;"> Producción</p>
+						</div>
+					</div>
+					<div class="ui-block-a">
+						<div id="theme901" class="roundedCorners themeSelection" onclick="themeSelection(901); return false;">
+							<p><img src="../img/markerSymbols/80101_1.png" alt="" width="32" height="37" style="float:right;"> Vivienda y Recreación</p>
+						</div>
+					</div>
+					<div class="ui-block-b">
+					</div>	
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="reportDescription">Descripción</label>
+					<textarea name="reportDescription" id="reportDescription"></textarea>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div data-theme="a" data-role="footer" class="nav-bar" style="position : absolute; bottom: 0; right: 0; left: 0; width: 100%; height: 60px;">
+	        <div data-role="navbar" data-iconpos="top" class="nav-bar">
+	            <ul>
+	            	<li>
+	                    <a href="#" onclick="notiSourceImg(); return false" rel="external" class="photoNav" data-icon="custom">Foto</a>
+	                </li>
+	                <li>
+	                    <a href="#" onclick="reportPoi(); return false" rel="external" class="reportNav" data-icon="custom">Denuncia</a>
+	                </li>
+	            </ul>
+	        </div>
+    	</div>					
+	</div><!-- /reportPage -->
+
+</body>
+</html>

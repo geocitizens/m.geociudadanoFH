@@ -4,14 +4,6 @@
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
-    <access origin="https://m.facebook.com" />
-    <access origin="https://graph.facebook.com" />
-    <access origin="https://api.facebook.com" />
-    <access origin="https://*.fbcdn.net" />
-    <access origin="https://*.akamaihd.net" />
-    <feature name="FacebookConnectPlugin">
-        <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
-    </feature>
     <name>geoCitizenMobile</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -20,8 +12,23 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
-    <access origin="*" />
-    <feature name="Vibration">
+    <plugins>
+        <plugin name="org.apache.cordova.facebook.Connect" value="org.apache.cordova.facebook.ConnectPlugin" />
+    </plugins>
+    <access origin="*" subdomains="true"/>
+    <access origin="http://127.0.0.1*" subdomains="true"/>
+    <access origin="https://m.facebook.com" subdomains="true"/>
+    <access origin="https://graph.facebook.com" subdomains="true"/>
+    <access origin="https://api.facebook.com" subdomains="true"/>
+    <access origin="https://*.fbcdn.net" subdomains="true"/>
+    <access origin="https://*.akamaihd.net" subdomains="true"/>
+    <feature name="org.apache.cordova.facebook.Connect">
+        <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
+    </feature>
+    <feature name="InAppBrowser">
+		<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+	</feature>
+	<feature name="Vibration">
         <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
     </feature>
     <feature name="Notification">

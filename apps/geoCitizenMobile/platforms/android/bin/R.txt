@@ -111,6 +111,7 @@ int layout com_facebook_placepickerfragment 0x7f03000a
 int layout com_facebook_placepickerfragment_list_row 0x7f03000b
 int layout com_facebook_search_bar_layout 0x7f03000c
 int layout com_facebook_usersettingsfragment 0x7f03000d
+int string app_id 0x7f08001c
 int string app_name 0x7f08001b
 int string com_facebook_choose_friends 0x7f08000f
 int string com_facebook_dialogloginactivity_ok_button 0x7f080000
