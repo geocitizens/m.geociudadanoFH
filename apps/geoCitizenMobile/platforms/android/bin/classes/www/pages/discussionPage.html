@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+		<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+		
+		<title>DiscussionPage</title>
+	</head>
+	<body>
+
+		<!-- discussionPage -->
+		<div data-role="page" id="discussionPage" class="page-content">
+		
+			<!-- Header -->
+			<div data-role="header" class="geo-header" id="discussionHeader" >
+				<div class="GC_Logo" id="nav-bar-Logo"> <img src="../img/GC_Logo.png" alt="" /></div>
+				<div data-role="navbar" data-iconpos="top" id="listviewNavbar" class="header-nav-bar">
+					<ul>
+						<li>
+							<!-- Search -->
+							<a href="#" rel="external" class="searchNav" data-icon="custom"></a>
+						</li>
+						<li>
+							<!-- Map Layer -->
+							<a href="#" rel="external" class="mapNav" data-icon="custom"></a>
+						</li>
+						<li>
+							<!-- User Profile -->
+							<a href="#" rel="external" class="profileNav" data-icon="custom"></a>
+						</li>
+					</ul>
+				</div>
+				<form class="search-input-bar">
+					<fieldset data-role="fieldcontain">
+						<label for="Searchtext"> Search for a report</label>
+						<input name="Searchtext" id="searchtxt" class="roundedCorners" value="" type="search" data-mini="true" placeholder="enter your searchtext..." >
+						<a href="#" rel="external" data-icon="" data-role="button" data-mini="true" class="search-orange-btn">
+						Search</a>
+						 <ul id="suggestions" data-role="listview" data-inset="true"></ul>
+					</fieldset>
+				</form>
+			</div>
+			<!-- Header End -->
+			
+			<div data-role="content" id="discussionContent">
+				
+				<div id="discussionTable">
+					<table data-role="table" data-mode="columntoggle" class="ui-responsive" id="reportTable">
+					  <!-- <tbody id="reportTableBody" class="tableBody">
+					  <tr id="286" class="comment"><td><p>David: <br>This is a cooment</p></td><td class="deletable"></td></tr>
+					  <tr id="309" class="reply"><td><p><em>Simon: <br>this is a reply</em></p></td><td class="not_deletable"></td></tr>
+					  </tbody>  -->
+					  <tbody id="discussionTableBody" class="tableBody">
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+					  </tbody>
+					</table>
+				</div>
+				
+			</div>
+			
+			<div data-role="footer" id="discussionFooter">
+			<textarea name="Commentinput" id="Commentinput" placeholder="write your comment"
+				maxlength="144" data-mini="true"></textarea>
+			<span id="textlimitComment"></span> 
+			<button type="submit" name="sendComment" id="sendComment" value="Send" /></button>
+			</div>				
+		</div><!-- listviewPage -->
+
+	</body>
+</html>

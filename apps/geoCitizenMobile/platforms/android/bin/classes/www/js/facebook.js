@@ -7,14 +7,16 @@ var fbdata;
 var fbjson;
 
 function fb_login() {
-	FB.login(function(response) {
+	FB.login(function(response){
 		fbdata = JSON.stringify(response);
 		fbjson = JSON.parse(fbdata);
 		console.log("UserInfo: "+fbdata);
 		console.log("UserID: "+fbjson.id);
+		$.mobile.changePage('pages/registerPage.html', { transition: "slide" });
 	},
 	{ scope: "email" }
 	);
+	return fbjson.id;
 }
 
 function fb_promptLogin() {

@@ -20,10 +20,28 @@
     <preference name="load-url-timeout" value="60000" />
     
 	<access origin="*" subdomains="true" />
+	<access origin="http://127.0.0.1*" subdomains="true"/>
+    <access origin="https://m.facebook.com" subdomains="true"/>
+    <access origin="https://graph.facebook.com" subdomains="true"/>
+    <access origin="https://api.facebook.com" subdomains="true"/>
+    <access origin="https://*.fbcdn.net" subdomains="true"/>
+    <access origin="https://*.akamaihd.net" subdomains="true"/>
 	
 	<gap:platform name="ios" />
 	<gap:platform name="android" />
-    
+	
+	<feature name="InAppBrowser">
+		<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+	</feature>
+	<feature name="org.apache.cordova.facebook.Connect">
+		<param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
+	</feature>
+ 
+	<!-- Cordova Plugin -->
+	<gap:plugin name="com.phonegap.plugins.facebookconnect">
+		<param name="APP_ID" value="540400396076898" />
+		<param name="APP_NAME" value="GeoCitizen" />
+	</gap:plugin>
     <gap:plugin name="org.apache.cordova.camera" />
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.file" />

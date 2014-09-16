@@ -1,0 +1,4 @@
+2014-05-12 11:17:58,283 ERROR [Worker-0] - System.err - Mai 12, 2014 11:17:58 AM com.objectaid.uml.model.manage.DiagramManager getFactories
+Information: com.objectaid.uml.diagramFactories[ucls]: com.objectaid.uml.cls.model.ClassDiagramFactory@1454bae0
+2014-05-12 11:17:58,296 ERROR [Worker-0] - System.err - Mai 12, 2014 11:17:58 AM com.objectaid.uml.model.manage.DiagramManager getFactories
+Information: com.objectaid.uml.diagramFactories[useq]: com.objectaid.uml.seq.model.SequenceDiagramFactory@54359131

@@ -29,11 +29,11 @@ function rememberImgBase64(base64Img){
 // Called if something bad happens.
 // 
 function onFail(message) {
-    //alert('Failed because: ' + message);
+    alert('Failed because: ' + message);
 }
 
 /**
- * Show dialog to let the user choose if want to take a new one or one from galery
+ * Show dialog to let the user choose if want to take a new one or one from gallery
  */
 function notiSourceImg(){
 	
@@ -50,11 +50,10 @@ function notiSourceImg(){
 	}
 
 	// Show a custom confirmation dialog
-	//
     navigator.notification.confirm(
-    	'Puedes tomar la foto o seleccionarla de la galeria',  // message
-        onConfirm,              				// callback to invoke with index of button pressed
-        'Foto',            		// title
-        'Camara,Galeria'          						// buttonLabels
+    	'Puedes tomar la foto o seleccionarla de la galeria',	// message
+        onConfirm,              								// callback to invoke with index of button pressed
+        'Foto',            										// title
+        'Camara,Galeria'          								// buttonLabels
     );
 }

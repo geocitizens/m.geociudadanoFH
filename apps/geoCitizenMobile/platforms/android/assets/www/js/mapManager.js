@@ -1,5 +1,12 @@
-/* To handle all the maps functions */
-function mapManager(){
+/* 
+ * To handle all the maps functions
+ * load and show the map
+ * set custom markers
+ * clear overlays
+ * draw lines
+ * ...
+ */
+function MapMgr(){
 	
 	//To access the map from inside methods
 	var mapObj = this;
@@ -46,14 +53,11 @@ function mapManager(){
 	    };
 		
 	    this.map = new google.maps.Map(element, myOptions);
-	    /*
-	    this.overlay = new google.maps.OverlayView();
-	    this.overlay.draw = function() {};
-	    this.overlay.setMap(this.map);
-	    */
-	    //google.maps.event.trigger(this.map, 'resize');
+	    
+	    google.maps.event.trigger(this.map, 'resize');
 	    
 	};
+	
 	/**
 	 * Trigger resize event
 	 */
@@ -62,7 +66,7 @@ function mapManager(){
 	};
 
 	/**
-	 * Clear all the overlays on the map
+	 * Clear all the overlays and markers on the map
 	 */
 	this.clearOverlays = function() {
 		//Clear all markers
@@ -73,6 +77,18 @@ function mapManager(){
 		this.markersArray = [];
 		//Clear overlays
 		size = this.overlaysArray.length; 
+		for (var i = 0; i < size; i++ ) {
+			this.overlaysArray[i].setMap(null);
+		}
+		this.overlaysArray = [];
+	};
+	
+	/**
+	 * Clear only the overlays
+	 */
+	this.clearOverlaysOnly = function() {
+			
+		var size = this.overlaysArray.length; 
 		for (var i = 0; i < size; i++ ) {
 			this.overlaysArray[i].setMap(null);
 		}
@@ -140,7 +156,7 @@ function mapManager(){
 	 */
 	this.extendMapBounds = function(latlng)
 	{
-		if(this.mapBounds == null)
+		if(this.mapBounds === null)
 		{
 			this.mapBounds = new google.maps.LatLngBounds();
 		}
@@ -160,5 +176,87 @@ function mapManager(){
 	this.clearMapBounds = function()
 	{
 		this.mapBounds = null;
+	};
+	
+	/**
+	 * from here on it is code from the web version
+	 */
+	this.findPlaceOnMap = function (address, zoom){
+		
+		var geocoder = new google.maps.Geocoder();
+		
+	    geocoder.geocode({ address: address },function(responses){
+	    	
+	        if(responses && responses.length > 0){
+	        	
+	        	$("#locationPop").popup("close");
+	        	
+	        	mapObj.map.setCenter(responses[0].geometry.location);
+	        	mapObj.map.setZoom(zoom);
+	        	
+				//$('#homeMsgId').html('<p>Ahora puedes ver todos los puntos reportados que cumplen con tu busqueda!</p><a href="#" data-rel="back" data-role="button" data-mini="true" class="orange-btn">Aceptar</a>');
+					        	
+	        }else{
+	        	$('#homeMsgId').html('<p>Tu búsqueda no obtuvo resultados!</p><a href="#" data-rel="back" data-role="button" data-mini="true" class="orange-btn">Aceptar</a>');
+	        	
+	        	$("#homeMsg").trigger( "create" ).popup('open');
+	        }
+	        
+	        /*
+	        else{
+	            alert("No hubo resultados, intente solo con la Ciudad");
+	        }*/
+	    });
+	};
+	
+	this.createCircle = function(latLng, onlyOne){
+		
+		if (onlyOne) {
+			if (this.circle == null) {
+				this.circle = new google.maps.Circle({
+			        center: latLng,
+			        map: mapObj.map,
+			        fillColor: '#0000FF',
+			        fillOpacity: 0.3,
+			        strokeColor: '#0000FF',
+			        strokeOpacity: 0.3,
+			        strokeWeight: 1,
+			        radius: 60
+			    });
+			}else{
+				this.circle.setCenter(latLng);
+				this.circle.setVisible(true);
+			}
+		} else {
+
+			var circle = new google.maps.Circle({
+		        center: latLng,
+		        map: mapObj.map,
+		        fillColor: '#0000FF',
+		        fillOpacity: 0.3,
+		        strokeColor: '#0000FF',
+		        strokeOpacity: 0.3,
+		        strokeWeight: 1,
+		        radius: 70
+		    });
+			
+			this.overlaysArray.push(circle);
+		}	
+	};
+	/**
+	 * Create a line beetwen to coordinates
+	 */
+	this.createLine = function(start, end, color){
+
+		var geoLine = new google.maps.Polyline({
+							path: [start,end],
+							map: mapObj.map,
+							strokeColor: color,
+							strokeOpacity: 0.9,
+							strokeWeight: 2,
+							clickable: false
+						});
+			
+		this.overlaysArray.push(geoLine);
 	};
 }

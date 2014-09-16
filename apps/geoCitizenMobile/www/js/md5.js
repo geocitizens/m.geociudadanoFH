@@ -1,3 +1,6 @@
+/* 
+ * function to generate a md5 hash from a string
+ */
 function md5 (str) {
   // http://kevin.vanzonneveld.net
   // +   original by: Webtoolkit.info (http://www.webtoolkit.info/)

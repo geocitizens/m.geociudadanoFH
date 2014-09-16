@@ -1,65 +1,77 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Register Page</title>
+	<head>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+		<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+		
+		<title>Register Page</title>
+	</head>
 
-<script src="../js/RegisterPage.js" type="text/javascript"></script>
-</head>
+	<body>
+		<div data-role="page" id="registerPage" class="page-content">
+			
+			<div data-role="header" id="registerHeader" class="empty-geo-header"></div>
 
-
-<body>
-
-<table style="text-align: left; width: 100px;" border="0" cellpadding="2" cellspacing="2">
-
-  <tbody>
-
-    <tr>
-
-      <td>Firstname*<input name="FirstName"></td>
-
-      <td>Lastname*<input name="LastName"></td>
-
-    </tr>
-
-    <tr>
-
-      <td>E-Mail*<input name="EMail"></td>
-
-      <td>Password*<input name="Password" type="password"></td>
-
-    </tr>
-
-    <tr>
-
-      <td>Year of Birth*<input name="YearOfBirth"></td>
-
-      <td></td>
-
-    </tr>
-
-    <tr>
-
-      <td>Country*<input name="Country"></td>
-
-      <td>City*<input name="City"></td>
-
-    </tr>
-
-    <tr>
-
-      <td>Neighborhood<input name="Neighborhood"></td>
-
-      <td></td>
-
-    </tr>
-
-  </tbody>
-</table>
-
-<br>
-
-<button name="Register" type="button" style="background-color: rgb(255, 255, 102);" onclick="Register();">Register</button><br>
-
-</body>
+			<div data-role="content" id="registerContent">
+				
+				<div class="GC-Welcome">
+					<div class="GC_Logo"> <img src="../img/GC_Logo.png" alt="" /></div>
+					<span class="text-dark-blue">Haz funcionar tu mundo!</span><br><br>
+				</div>
+				
+				<form>
+					<fieldset data-role="fieldcontain">
+						<legend>Registrar como un GEOCIUDADANO!</legend>
+						<br><br>
+						
+						<label for="FirstName"> First name *</label> 
+						<input name="FirstName" id="FirstName" placeholder="First name" value="" type="text" data-mini="true">
+						<br>
+						<label for="LastName"> Last name *</label> 
+						<input name="LastName" id="LastName" placeholder="Last name" value="" type="text" data-mini="true">
+						<br>
+						<label for="EMail"> EMail *</label> 
+						<input name="EMail" id="EMail" placeholder="Usuario/EMail" value="" type="email" data-mini="true">
+						<br>
+						<label for="Birthdate"> Year of Birth *</label> 
+						<input name="Birthdate" id="Birthdate" placeholder="YYYY" type="text" data-mini="true" data-role="date">
+						<br>
+						<label for="Gender">Gender *</label>
+						<select name="Gender" id="Gender" data-role="slider">
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select>
+						<br>					
+						<label for="Countries"> Country *</label> 
+						<select name="Countries" id="CountriesSelect" placeholder="choose Country" type="text" data-mini="true"  >
+							<option value="-1">loading ...</option>
+						</select> 
+						<br>
+						<label for="Cities"> City *</label> 
+						<select name="Cities" id="CitiesSelect" placeholder="choose City"  type="text" data-mini="true">
+							<option value="-1">Please select Country</option>
+						</select> 
+						<br>
+						<label for="Neighborhood"> Neighborhood </label> 
+						<select name="Neighborhood" id="NeighborhoodSelect" placeholder="Neighborhood" type="text" data-mini="true">
+							<option value="-1">Please select City </option>
+						</select> 
+						<br>
+						<label for="Password"> Contrase&ntilde;a *</label> 
+						<input name="Contrase&ntilde;a" id="Password" placeholder="Contrase&ntilde;a" value="" type="password" data-mini="true">
+						<br>
+						<label for="Passwordconf"> confirmar Contrase&ntilde;a *</label> 
+						<input name="confirmar Contrase&ntilde;a" id="Passwordconf" placeholder="confirmar Contrase&ntilde;a" value="" type="password" data-mini="true">
+						<br><br>
+						<a href="#" id="sendRegisterButton" style="float: right;"
+							rel="external" data-icon="" data-role="button" data-mini="true" class="small-orange-btn">
+							Registrar</a><br><br>
+					</fieldset>
+				</form>
+			</div>
+			<div data-role="footer" id="registerFooter" ></div>
+		</div>
+	</body>
 </html>

@@ -1,52 +1,121 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-</head>
-<body>
-
-	<!-- mapPage -->
-	<div data-role="page" id="mapPage" data-dom-cache="true" class="content-header">
-		<div class="geo-header">
-	    	<div style="padding-top: 10px; font-size: 20px; text-shadow: none; font-weight: bold;">
-	    		<span class="text-blue">geo</span><span class="text-orange">Ciudadano</span>
-	    		<div style="position: absolute; right: 0; top: 2px;">
-					<a href="#" onclick="notiExit(); return false" rel="external" data-icon="">
-						<img src="../img/off40.png" class="center">
-					</a>					
-				</div>
-	    	</div>
-	    </div>
+	<head>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+		<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
 				
-		<div data-role="content">
-						
-			<!-- For the map --> 
-			<div id="map_canvas"></div>
-			
-			<div id="disableMapLogo"></div>
-			
-			<div id="getLocation" class="roundedCorners">
-				<img src="../img/gps.png" width="34" height="34" style="padding-left: 3px; padding-top: 3px;">
+		<title>MapPage</title>
+	</head>
+	<body>
+
+		<!-- mapPage -->
+		<div data-role="page" id="mapPage" class="page-content" data-dom-cache="true">
+		
+			<!-- Header -->
+			<div data-role="header" class="geo-header" id="mapHeader" >
+				<div class="GC_Logo" id="nav-bar-Logo"> <img src="../img/GC_Logo.png" alt="" /></div>
+				<div data-role="navbar" data-iconpos="top" id="mapNavbar" class="header-nav-bar">
+					<ul>
+						<li>
+							<!-- ListView -->
+							<a href="#" rel="external" class="listviewNav" data-icon="custom"></a>
+						</li>
+						<li>
+							<!-- Search -->
+							<a href="#" rel="external" class="searchNav" data-icon="custom"></a>
+						</li>
+						<li>
+							<!-- Map Layer -->
+							<a href="#" rel="external" class="mapLayerNav" data-icon="custom"></a>
+						</li>
+						<li>
+							<!-- User Profile -->
+							<a href="#" rel="external" class="profileNav" data-icon="custom"></a>
+						</li>
+					</ul>
+				</div>
+				<form class="search-input-bar">
+					<fieldset data-role="fieldcontain">
+						<label for="Searchtext"> Search for a report</label>
+						<input name="Searchtext" id="searchtxt" class="roundedCorners" value="" type="search" data-mini="true" placeholder="..." >
+						<a href="#" id="searchButton" rel="external" data-icon="" data-role="button" data-mini="true" class="search-orange-btn">
+						Search</a>
+						 <ul id="suggestions" data-role="listview" data-inset="true"></ul>
+					</fieldset>
+				</form>
+				<form class="userprofile-bar">
+					<fieldset data-role="fieldcontain">
+						<a href="#" id="profile_myactivities" rel="external" data-icon="" data-role="button" data-mini="true" class="orange-btn">
+						My activities</a>
+						<a href="#" id="profile_profile" rel="external" data-icon="" data-role="button" data-mini="true" class="orange-btn">
+						My profile</a>
+						<a href="#" id="profile_logout" rel="external" data-icon="" data-role="button" data-mini="true" class="orange-btn">
+						Log out</a>
+					</fieldset>
+				</form>
 			</div>
 			
+			
+			<!-- Header End-->
+					
+			<div data-role="content" id="mapContent">
+							
+				<!-- For the map --> 
+				<div id="map_canvas"></div>
+				
+				<div id="map_layers">
+            		<div id="layersBtn" onclick="$('#layersList').toggle();">
+            			Capas Mapa
+            			<img src="http://maps.gstatic.com/mapfiles/arrow-down.png" draggable="false" style="-moz-user-select: none; border: 0px none; padding: 0 0 2px 60px; width: 7px; height: 4px;">
+            		</div>
+            		<div id="layersList"></div>
+            	</div>
+            	
+            	<!-- 
+            	<div style="position: absolute; left: 10px; bottom: 90px;">
+            		<a href="#" onclick="centerMap(); return false" rel="external" data-role="button" data-mini="true" class="orange-btn">Inicio</a>
+            		<a href="#" onclick="mapMgr.map.setZoom(2); return false" rel="external" data-role="button" data-mini="true" class="orange-btn">Mundo</a>
+            		<a href="#" onclick="mapMgr.map.setZoom(13); return false" rel="external" data-role="button" data-mini="true" class="orange-btn">Ciudad</a>
+            		<a href="#" onclick="mapMgr.map.setZoom(17); return false" rel="external" data-role="button" data-mini="true" class="orange-btn">Barrio</a>
+            		<a href="#locationPop" data-rel="popup" data-role="button" data-mini="true" class="orange-btn">Ubícame</a>
+            	</div>
+            	-->
+            	
+            	<div id="wheelContainer"></div>
+								
+				<div id="getLocation" class="roundedCorners">
+					<img src="../img/gps.png" >
+				</div>
+				
+			</div>
+			
+			<div data-role="footer" id="mapFooter">
+				<div data-role="navbar" role="navigation" data-iconpos="top" class="footer-nav-bar" >
+					<ul class="ui-grid">
+						<li class="ui-block-a">
+							<a href="#" onclick="notiSourceImg(); return false" rel="external" class="photoNav orange-btn" data-icon="custom" data-corners="false" data-inline="true">
+								<span class="footerNavText">Photo</span>
+							</a>
+						</li>
+						<li class="ui-block-b">
+							<a href="newReportPage.html" data-transition="slide" class="reportNav orange-btn" data-icon="custom" data-corners="false" data-inline="true">
+								<span class="footerNavText">Report</span>
+							</a>
+						</li>
+						<!--
+						<li>
+							<a class="ui-btn ui-btn-inline orange-btn" href="#" onclick="sharePoi(); return false" rel="external" class="shareNav" data-icon="custom" data-corners="false" data-inline="true">
+								<span class="ui-btn-text">Compartir</span>
+							</a>
+						</li>
+						 -->
+					</ul>
+				</div>
+			</div>				
 		</div>
-		
-		<div id="mapFooter" data-theme="a" data-role="footer" class="nav-bar" style="position : absolute; bottom: 0; right: 0; left: 0; width: 100%; height: 60px;">
-	        <div data-role="navbar" data-iconpos="top" class="nav-bar">
-	            <ul>
-	            	<li>
-	                    <a href="#" onclick="notiSourceImg(); return false" rel="external" class="photoNav" data-icon="custom">Foto</a>
-	                </li>
-	                <li>
-	                    <a href="reportPage.html" data-transition="slide" class="reportNav" data-icon="custom">Denuncia</a>
-	                </li>
-	                <li>
-	                    <a href="#" onclick="sharePoi(); return false" rel="external" class="shareNav" data-icon="custom">Compartir</a>
-	                </li>
-	            </ul>
-	        </div>
-    	</div>				
-	</div><!-- /mapPage -->
+		<!-- /mapPage -->
 
-</body>
+	</body>
 </html>

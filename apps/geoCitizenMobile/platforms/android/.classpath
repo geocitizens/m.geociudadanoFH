@@ -4,9 +4,10 @@
 	<classpathentry kind="src" path="assets"/>
 	<classpathentry excluding="simple facebook.jar" kind="src" path="libs"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/geoCitizenMobile-CordovaLib"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/FacebookSDK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/geoCitizenMobile-CordovaLib"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

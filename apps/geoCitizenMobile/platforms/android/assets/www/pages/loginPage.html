@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+		<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+		
+		<title>Login/Registrar</title>
+		<!-- 
+		cordova facebook plugin
+		<script type="text/javascript" src="../cdv-plugin-fb-connect.js"></script>
+		facebook js sdk
+		<script type="text/javascript" src="../facebook-js-sdk.js"></script>
+		
+		<script type="text/javascript" src="../js/facebookMgr.js"></script>
+		<script type="text/javascript" src="../js/Twitter.js"></script> -->
+	</head>
+
+	<body>
+
+		<script>			
+			FB.Event.subscribe('auth.login', function(response) {
+				<!-- alert('auth.login event'); -->
+				});
+
+			FB.Event.subscribe('auth.logout', function(response) {
+				<!-- alert('auth.logout event'); -->
+				});
+
+			FB.Event.subscribe('auth.sessionChange', function(response) {
+				<!-- alert('auth.sessionChange event'); -->
+				});
+
+			FB.Event.subscribe('auth.statusChange', function(response) {
+				<!-- alert('auth.statusChange event'); -->
+				});
+		</script>
+		
+		<div id="fb-root"></div>
+
+		<div data-role="page" id="loginPage" class="page-content" >
+		
+			<div data-role="header" class="empty-geo-header" ></div>
+
+			<div data-role="content" id="loginContent" >
+				
+				<div class="GC-Welcome">
+					<div class="GC_Logo"> <img src="../img/GC_Logo.png" alt="" /></div>
+					<span class="text-dark-blue">Haz funcionar tu mundo!</span><br><br>
+				</div>
+				
+				<form>
+					<fieldset data-role="fieldcontain">
+						<legend>Ya soy un GEOCIUDADANO!</legend>
+						<label for="logintxtEmail"> Email </label> 
+						<input name="Usurio/Email"id="logintxtEmail" placeholder="Usuario/Email" value="" type="email" >
+						<label for="logintxtPass"> Contrase&ntilde;a </label> 
+						<input name="Contrase&ntilde;a" id="logintxtPass" placeholder="Contrase&ntilde;a" value="" type="password">
+						<label><input type="checkbox" name="keepLoginCheck" id="keepLoginCheck"/> keep me logged in </label>
+						
+						<!-- TESTONLY  onclick="userMgr.gotoMapPage(); return false" onclick="userMgr.gotoRegistrar(); return false"-->
+						<a href="#" id="LoginButton" style="float: right;
+							rel="external" data-icon="" data-role="button" data-mini="true" class="small-orange-btn">
+							Log in</a>
+							
+						<a href="#" id="RegisterButton" style="float: right;"
+							rel="external" data-icon="" data-role="button" data-mini="true" class="small-orange-btn">
+							Registrar</a><br><br>
+							
+						<div class="registerFirst">
+							<span class="text-dark-blue"></span>
+						</div>
+					</fieldset>
+				</form>
+				<br> <br> 
+					
+				<img id="facebookLoginButton" alt="" src="../img/login-facebook.png" href="#" /><br>
+				
+				<!-- <img style="border: 0px solid; width: 158px; height: 28px;"
+					alt="" src="img/sign-in-with-twitter-gray.png" href="#"
+					onclick="OnClickLoginTwitter(); return false;"><br>  -->				
+				
+			</div>
+			
+			<div data-role="footer" id="loginFooter" ></div>
+		</div>
+	</body>
+</html>

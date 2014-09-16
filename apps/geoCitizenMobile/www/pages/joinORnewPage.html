@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+		<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+		
+		<title>joinORnewPage</title>
+	</head>
+	<body>
+
+		<!-- joinORnewPage -->
+		<div data-role="page" id="joinORnewPage" class="page-content data-dom-cache="true">
+		
+			<!-- Header -->
+			<div data-role="header" class="geo-header" id="joinORnewHeader" >
+				<div class="GC_Logo" id="nav-bar-Logo"> <img src="../img/GC_Logo.png" alt="" /></div>
+				<div data-role="navbar" data-iconpos="top" id="joinORnewNavbar" class="header-nav-bar">
+					<ul>
+						<li>
+							<a href="#" rel="external" class="filterNav" data-icon="custom"></a>
+						</li>
+						<li>
+							<!-- Search -->
+							<a href="#" rel="external" class="searchNav" data-icon="custom"></a>
+						</li>
+						<li>
+							<!-- Map Layer -->
+							<a href="#" rel="external" class="mapNav" data-icon="custom"></a>
+						</li>
+						<li>
+							<!-- User Profile -->
+							<a href="#" rel="external" class="profileNav" data-icon="custom"></a>
+						</li>
+					</ul>
+				</div>
+				<form class="search-input-bar">
+					<fieldset data-role="fieldcontain">
+						<label for="Searchtext"> Search for a report</label>
+						<input name="Searchtext" id="searchtxt" class="roundedCorners" value="" type="search" data-mini="true" placeholder="enter your searchtext..." >
+						<a href="#" rel="external" data-icon="" data-role="button" data-mini="true" class="search-orange-btn">
+						Search</a>
+						 <ul id="suggestions" data-role="listview" data-inset="true"></ul>
+					</fieldset>
+				</form>
+				<form class="filter-input-bar">
+					<fieldset data-role="fieldcontain">
+						<legend>Filter the reports: </legend>
+						
+						<label for="usernameFilterTxt"> Nombre de usuario </label>
+						<input name="usernameFilterTxt" id="usernameFiltertxt" class="roundedCorners" value="" type="text" data-mini="true" placeholder="username" >
+						<a id="myAcitvitiesButton" href="#" rel="external" data-icon="" data-role="button" data-mini="true" class="small-orange-btn">
+						My activities</a>
+						<br>
+						
+						<label for="ThemeAndCategory"> Topic and Category</label> 
+						<select name="ThemeAndCategory" id="ThemeSelect" placeholder="Thema"  type="text" data-mini="true">
+							<option value="-1">Please select Theme</option>
+						</select>
+						<select name="TopicAndCategory" id="CategorySelect" placeholder="Category"  type="text" data-mini="true">
+							<option value="-1">Please select Category</option>
+						</select> 
+						<br>
+						<label for="Status"> Status </label> 
+						<select name="Status" id="StatusSelect" placeholder="Status"  type="text" data-mini="true">
+							<option value="-1">Please select Status</option>
+						</select>
+						<br>
+						<label for="barrioFilterTxt"> Barrio </label>
+						<input name="barrioFilterTxt" id="barrioFiltertxt" class="roundedCorners" value="" type="text" data-mini="true" placeholder="barrio" >
+						<br>
+						<label for="dateFilterTxt"> Date </label>
+						<input name="dateFilterTxt" id="dateDayFiltertxt" class="roundedCorners" value="" type="text" data-mini="true" placeholder="DD" >
+						<input name="dateFilterTxt" id="dateMonthFiltertxt" class="roundedCorners" value="" type="text" data-mini="true" placeholder="MM" >
+						<input name="dateFilterTxt" id="dateYearFiltertxt" class="roundedCorners" value="" type="text" data-mini="true" placeholder="YYYY" >
+						<a id="filterButton" href="#" rel="external" data-icon="" data-role="button" data-mini="true" class="search-orange-btn">
+						Filter</a>
+					</fieldset>
+				</form>
+			</div>
+			<!-- Header End-->
+			
+			<div data-role="content" id="joinORnewContent">
+				
+				<div id="joinORnewHelp">
+					Now you can
+					<br> - Join a similar process, or
+					<br> - Start a new process
+				</div>
+					
+				<div id="joinORnewTable">
+					<table data-role="table" data-mode="columntoggle" class="ui-responsive" id="myTable">
+					  <thead class="tableHeader">
+					    <tr>
+					      <th>Topic</th>
+					      <th>Description</th>
+					      <th data-priority="">Status</th>
+					    </tr>
+					  </thead>
+					  <tbody class="tableBody">
+					    <tr id="0">
+					      <td></td>
+							<td>loading...
+							</td>
+					      <td></td>
+					    </tr>
+					  </tbody>
+					</table>
+				</div>
+				
+			</div>
+			
+			<div data-role="footer" id="joinORnewFooter" >
+				<div class="ui-navbar ui-mini" data-role="navbar" role="navigation">
+					<ul class="ui-grid-solo">
+						<li class="ui-block-a">
+							<a id="startNewProcess_Button" class="ui-btn ui-btn-inline orange-btn-footer" href="#" data-corners="false" data-inline="true">
+								<span class="ui-btn-text">Start a new process</span>
+							</a>
+						</li>
+					</ul>
+				</div>			
+			</div>
+		</div>
+	</body>
+</html>

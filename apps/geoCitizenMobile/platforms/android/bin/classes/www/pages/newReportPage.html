@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+		<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+		
+		<title>newReportPage</title>
+	</head>
+	<body>
+		<div data-role="page" id="newReportPage" class="page-content" data-dom-cache="true">
+		
+		<div id="newReportWrapper">
+	
+			<!-- Header -->
+			<div data-role="header" class="geo-header" id="newReportHeader">
+				<div class="GC_Logo" id="nav-bar-Logo">
+					<img src="../img/GC_Logo.png" alt="" />
+				</div>
+				<div data-role="navbar" data-iconpos="top" id="newReportNavbar"
+					class="header-nav-bar">
+					<ul>
+						<li>
+							<!-- ListView --> <a href="#" rel="external" class="listviewNav"
+							data-icon="custom"></a>
+						</li>
+						<li>
+							<!-- Search --> <a href="#" rel="external" class="searchNav"
+							data-icon="custom"></a>
+						</li>
+						<li>
+							<!-- Map Layer --> <a href="#" rel="external" class="mapNav"
+							data-icon="custom"></a>
+						</li>
+						<li>
+							<!-- User Profile --> <a href="#" rel="external"
+							class="profileNav" data-icon="custom"></a>
+						</li>
+					</ul>
+				</div>
+				<form class="search-input-bar">
+					<fieldset data-role="fieldcontain">
+						<label for="Searchtext"> Search for a report</label>
+						<input name="Searchtext" id="searchtxt" class="roundedCorners" value="" type="search" data-mini="true" placeholder="..." >
+						<a href="#" id="searchButton" rel="external" data-icon="" data-role="button" data-mini="true" class="search-orange-btn">
+						Search</a>
+						 <ul id="suggestions" data-role="listview" data-inset="true"></ul>
+					</fieldset>
+				</form>
+			</div>
+	
+			<div data-role="content" id="newReportContent">
+	
+				<form>
+					<fieldset data-role="fieldcontain">
+						<legend>What do you want to report?</legend>
+						<br> <br> 
+						<label for="newReportThemes"> Theme</label> 
+						<select
+							name="newReportThemes" id="ThemeSelect" placeholder="choose Theme"
+							type="text" data-mini="true">
+							<option value="-1">loading ...</option>
+						</select> 
+						<br> 
+						<label for="newReportCategories"> Category</label> 
+						<select
+							name="newReportCategories" id="CategorySelect"
+							placeholder="choose Category" type="text" data-mini="true">
+							<option value="-1">Please select a Theme first</option>
+						</select> 
+						<br> 
+						<label for="newReportTitle"> Title *</label> 
+						<input
+							name="newReportTitle" id="newReportTitle" placeholder="Title"
+							maxlength="144" value="" type="text" data-mini="true">
+						<span id="textlimitTitle" class="textLimit"></span> 
+						<br> 
+						<label
+							for="newReportDescription"> Description </label> 
+						<input
+							name="newReportDescription" id="newReportDescription"
+							placeholder="Description" maxlength="144" value="" type="text" data-mini="true">
+						<span id="textlimitDescription" class="textLimit"></span>
+						<br> 
+						<label for="newReportDate"> ReportDate </label> 
+						<input
+							name="newReportDate" id="newReportDate" placeholder="DD.MM.YYYY"
+							type="text" data-mini="true" data-role="date"> 
+						<br> 
+						<label for="Countries"> Country *</label> 
+						<select name="Countries"
+							id="CountriesSelect" placeholder="choose Country" type="text"
+							data-mini="true">
+							<option value="-1">loading ...</option>
+						</select> 
+						<br> 
+						<label for="Cities"> City *</label> 
+						<select
+							name="Cities" id="CitiesSelect" placeholder="choose City"
+							type="text" data-mini="true">
+							<option value="-1">Please select a Country first</option>
+						</select> 
+						<br> 
+						<label for="Neighborhood"> Neighborhood </label> 
+						<select
+							name="Neighborhood" id="NeighborhoodSelect"
+							placeholder="Neighborhood" type="text" data-mini="true">
+							<option value="-1">Please select a City first</option>
+						</select>
+						<br> 
+						<label for="newReportAim"> What is my contribution *</label> 
+						<textarea name="newReportAim" id="newReportAim" placeholder="Aim"
+							maxlength="144" data-mini="true"></textarea>
+						<span id="textlimitAim" class="textLimit"></span> 
+						<br> 
+						<label for="Anonymous"> Do you want to stay anonymous? *</label> 
+						<select
+							name="Anonymous" id="Anonymous" data-role="slider">
+							<option value="true">Yes</option>
+							<option value="false">No</option>
+						</select> 
+						<br>
+						<br>
+					</fieldset>
+				</form>
+			</div>
+			</div>
+	
+			<div data-role="footer" id="newReportFooter">
+				<div data-role="navbar" role="navigation" data-iconpos="top"
+					class="footer-nav-bar">
+					<ul class="ui-grid">
+						<li class="ui-block-a"><a href="#"
+							onclick="notiSourceImg(); return false" rel="external"
+							class="photoNav orange-btn" data-icon="custom"
+							data-corners="false" data-inline="true"> <span
+								class="footerNavText">Photo</span>
+						</a></li>
+						<li class="ui-block-b reportNav orange-btn"><a href="#"
+							id="doneReport_Button" data-icon="custom"
+							data-corners="false" data-inline="true"> <span
+								class="footerNavText">Done</span>
+						</a></li>
+						<!--
+							<li>
+								<a class="ui-btn ui-btn-inline orange-btn" href="#" onclick="sharePoi(); return false" rel="external" class="shareNav" data-icon="custom" data-corners="false" data-inline="true">
+									<span class="ui-btn-text">Compartir</span>
+								</a>
+							</li>
+							 -->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

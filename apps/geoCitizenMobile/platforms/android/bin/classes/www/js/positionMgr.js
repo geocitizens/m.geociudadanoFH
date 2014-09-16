@@ -1,4 +1,7 @@
-/* User obj */
+/* 
+ * PositionManager obj
+ * 
+ */
 function PositionMgr(){
 	
 	//To have access from methods
@@ -13,7 +16,7 @@ function PositionMgr(){
 	this.watchID = null;
 	this.lat = null;
 	this.lng = null;
-	this.latLng = null //google maps latLng obj
+	this.latLng = null; //google maps latLng obj
 	this.neighborhood = null;
 	this.firstPos = true;
 		
@@ -29,8 +32,11 @@ function PositionMgr(){
 		
 		positionObj.stopWatchingPosition();
 		
+		positionObj.firstPos = true;
+		
 		//Get current position
-		navigator.geolocation.getCurrentPosition(onSuccess, onError, {timeout: 15000});
+		//navigator.geolocation.getCurrentPosition(onSuccess, onError, {timeout: 15000, enableHighAccuracy: true});
+		navigator.geolocation.getCurrentPosition(onSuccess, onError, positionObj.options);
 		
 		//Watch for the position
 		positionObj.watchID = navigator.geolocation.watchPosition(onSuccess, onError, positionObj.options);
@@ -53,7 +59,7 @@ function PositionMgr(){
 	 * Position acquired
 	 */
 	function onSuccess(position) 
-	{	
+	{		
 		//Save coordinates
 		positionObj.lat = position.coords.latitude;
 		positionObj.lng = position.coords.longitude;
@@ -92,15 +98,17 @@ function PositionMgr(){
 		$.mobile.loading("hide");
 	}
 	
-	// onError Callback receives a PositionError object
+	//onError Callback receives a PositionError object
 	function onError(error) {
-	    /*alert('code: '    + error.code    + '\n' +
-	          'message: ' + error.message + '\n');*/
+	    //alert('code: '    + error.code    + '\n' +
+	          //'message: ' + error.message + '\n');
 		if (error.code !== 3) {
 			positionObj.stopWatchingPosition();
 			
 			defaultNoti("Por favor revisa la configuración de la ubicación en tu celular. No pudimos ubicarte.", "Ubicación", "Aceptar");
 		}
+		
+		$.mobile.loading("hide");
 	}
 }
 

@@ -15,20 +15,22 @@
     <plugins>
         <plugin name="org.apache.cordova.facebook.Connect" value="org.apache.cordova.facebook.ConnectPlugin" />
     </plugins>
-    <access origin="*" subdomains="true"/>
-    <access origin="http://127.0.0.1*" subdomains="true"/>
-    <access origin="https://m.facebook.com" subdomains="true"/>
-    <access origin="https://graph.facebook.com" subdomains="true"/>
-    <access origin="https://api.facebook.com" subdomains="true"/>
-    <access origin="https://*.fbcdn.net" subdomains="true"/>
-    <access origin="https://*.akamaihd.net" subdomains="true"/>
+    <access origin="*" subdomains="true" />
+    <access origin="http://127.0.0.1*" subdomains="true" />
+    <access origin="https://m.facebook.com" subdomains="true" />
+    <access origin="https://graph.facebook.com" subdomains="true" />
+    <access origin="https://api.facebook.com" subdomains="true" />
+    <access origin="https://*.fbcdn.net" subdomains="true" />
+    <access origin="https://*.akamaihd.net" subdomains="true" />
+    <access origin="https://http://*.google.com" subdomains="true"/>
+    <access origin="http://http://*.google.com" subdomains="true"/>
     <feature name="org.apache.cordova.facebook.Connect">
         <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
     </feature>
     <feature name="InAppBrowser">
-		<param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
-	</feature>
-	<feature name="Vibration">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="Vibration">
         <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
     </feature>
     <feature name="Notification">
@@ -54,5 +56,11 @@
     </feature>
     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="SocialSharing">
+        <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
     </feature>
 </widget>
